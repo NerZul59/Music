@@ -1,0 +1,19 @@
+create database music;
+use music;
+create table albums(
+ID int auto_increment primary key,
+ALBUM_TITLE varchar(20),
+ARTIST varchar(50),
+YEAR int,
+IMAGE_NAME varchar (150),
+DESCRIPTION varchar(300)
+);
+create table track(
+track_id int auto_increment primary key,
+title varchar(20),
+number int,
+video_url varchar (150),
+lyrics varchar(300),
+albums_ID int,
+FOREIGN KEY (albums_ID) REFERENCES albums(ID) ON DELETE CASCADE
+);
